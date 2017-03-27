@@ -4,7 +4,7 @@ module.exports = {
 
   development: {
     client: 'pg',
-    connection: 'postgres://localhost/humane_db'
+    connection: 'postgres://localhost/humeme_db'
 
   }
 
