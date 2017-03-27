@@ -7,5 +7,10 @@ router.get('/', function(req, res, next) {
     title: 'HOMEPAGE'
   })
 });
-
+router.get('/:username', function(req, res, next) {
+  res.render('home', {
+    title: 'HOMEPAGE',
+    username: req.params.username
+  })
+});
 module.exports = router;

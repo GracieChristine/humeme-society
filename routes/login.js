@@ -15,12 +15,12 @@ router.post('/', function(req, res, next) {
   checkUsername(username).then((data) => {
     console.log('this is data', data.length);
     if (data.length || !username) {
-      res.sendStatus(400)
+      res.redirect(`home/${username}`)
     } else {
       insertIntoUsers(username)
         .then((iData) => {
           console.log('heehehehheheheh');
-          res.redirect('home')
+          res.redirect(`home/${username}`)
         })
       // res.redirect('home')
     }
