@@ -1,1 +1,0 @@
-# humeme-society
