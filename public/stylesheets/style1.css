@@ -1,8 +1,43 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
-  color: #00B7FF;
+    color: #00B7FF;
+}
+
+html, body {
+    font-family: 'Permanent Marker', cursive;
+    height: 100%;
+    background-color: gray;
+}
+
+header {
+    justify-content: center;
+    backgroud-width: 50%;
+    flex-direction: column;
+    height: 400px;
+}
+
+#brandLogo {
+    font-family: 'Permanent Marker', cursive;
+}
+
+.container {
+    background-color: grey;
+    padding-bottom: 40px;
+}
+
+button {
+    position: relative;
+    top: 30px;
+}
+
+.greycon {
+    background-color: gray;
+}
+
+.container-fluid {
+    background-color: grey;
 }

@@ -25,7 +25,14 @@
     <!-- flavorTom ICON -->
     <link rel="shortcut icon" type="image/x-icon" href="../public/images/favicon.ico" />
 
-    <link rel="stylesheet" href="../stylesheets/style.css">
+    <!-- <link rel="stylesheet" href="../stylesheets/style.css"> -->
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+    <script src="../javascripts/events.js" charset="utf-8"></script>
 </head>
 
 <body>
@@ -38,7 +45,7 @@
 
             <!-- SEARCH  -->
             <form id="search">
-                <input type="text" class="search"/>
+                <input type="text" class="search" />
                 <button type="searchButton">Search</button>
             </form>
         </div>
@@ -50,8 +57,8 @@
             <i class="fa fa-remove"></i>
         </a>
         <h4 class="w3-bar-item"><b>Welcome, {{username}}</b></h4>
-        <a class="w3-bar-item w3-button w3-hover-black logOut"  href="#">Log Out</a>
-        <a class="w3-bar-item w3-button w3-hover-black" href="#">Delete</a>
+        <a class="w3-bar-item w3-button w3-hover-black logOut" href="#">Log Out</a>
+        <a data-user-id="{{username}}" class="w3-bar-item w3-button w3-hover-black delete-user" href="#">Delete</a>
 
     </nav>
 
@@ -61,32 +68,45 @@
     <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
     <div class="w3-main" style="margin-left:250px">
 
-      <!-- {{#each comments}}
-      <h2>By {{fullName author}}</h2>
-      <div class="body">{{body}}</div>
-      {{/each}} -->
-{{#each blogData}}
-<div class="w3-row w3-padding-64">
-  <div class="w3-twothird w3-container">
-    <h1 class="w3-text-teal">{{this.title}}</h1>
-    <p>{{this.text}}</p>
-    </div>
+        <br><br><br><br><br><br><br><br>
 
-  </div>
-
-{{/each}}
-
-
-
-        <footer id="myFooter">
-            <div class="w3-container w3-theme-l2 w3-padding-32">
-                <h4>Footer</h4>
+        <form class="col s10" method="post">
+          <input style="display:none;" type="text" name="name" value="{{username}}">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input value="" name="title" id="new-title" type="text" class="validate">
+                    <label class="active" for="new-title">Title</label>
+                </div>
             </div>
-
-            <div class="w3-container w3-theme-l1">
-                <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+            <div class="row">
+                <div class="row">
+                    <div class="input-field col s10">
+                        <textarea name="text" id="new-post" class="materialize-textarea"></textarea>
+                        <label for="new-post">Post</label>
+                    </div>
+                </div>
+                <button class="btn waves-effect waves-light" type="submit">Submit<i class="material-icons right"></i> </button>
             </div>
-        </footer>
+        </form>
+        <script>
+            $('#new-post').val('New Text');
+            $('#new-post').trigger('autoresize');
+        </script>
+
+        {{#each blogData}}
+            <div class="w3-row w3-padding-64">
+                <div class="w3-twothird w3-container">
+                    <h1 class="w3-text-teal">{{this.title}}</h1>
+                    <p>{{this.text}}</p>
+                </div>
+
+            </div>
+            <a data-post-id="{{this.id}}" class="waves-effect waves-light btn update">Edit</a>
+            <a data-post-id="{{this.id}}" class="waves-effect waves-light btn delete-post">Delete</a>
+        {{/each}}
+
+
+
 
         <!-- END MAIN -->
     </div>

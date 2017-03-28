@@ -1,13 +1,59 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
-    <title>Humeme Society</title>
-  </head>
-  <body>
-    <form class="username" method="post">
-      <input type="text" name="username" value="matt">
-      <button type="submit" name="submit"></button>
-    </form>
-  </body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HumemeSociety</title>
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+    <script src="../javascripts/events.js" charset="utf-8"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
+
+    <link rel="stylesheet" href="../stylesheets/style1.css">
+</head>
+
+<body>
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper grey">
+                <div class="container grey-text text-lighten-4">
+                    <a href="index.html" class="brand-logo center black-text text-lighten-5" id="brandLogo">
+            HumemeSociety Blog
+          </a>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <main class="container-fluid grey-text text-lighten-5">
+        <div class="row container greycon">
+            <form method="post">
+                <div class="col offset-s2 s7">
+                    <div class="input-field">
+                        <input type="text" placeholder="Enter your name..." id="search" name="username" />
+                    </div>
+                </div>
+
+                <div class="col s3">
+                    <button class="btn-large waves-effect waves-light grey" type="submit" name="submit">
+
+            Login
+          </button>
+                </div>
+            </form>
+        </div>
+
+        <div id="listings" class="row"></div>
+    </main>
+</body>
+
 </html>
